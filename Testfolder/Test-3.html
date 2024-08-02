@@ -1,0 +1,64 @@
+
+<!-- 1. Semantic elements are HTML elements that provide meaning to the content, These elements make the HTML more readable
+  Like <header> </header> ,<nav></nav> ,<section></section>, <Form></Form> -->
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Form </title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        form {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+        }
+        .form {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        
+    </style>
+</head>
+<body>
+
+    <form>
+        <div class="form">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" pattern="[A-Z]+"  required>
+        </div>
+        <div class="form">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" pattern="[A-Z]+" required>
+        </div>
+        <div class="form">
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" pattern="[A-Z]+"  required>
+        </div>
+        <div class="form">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" pattern="[A-Z]+" required>
+        </div>
+        <div class="form">
+            <label for="age">Age:</label>
+            <input type="number" id="age" name="age" min="20" max="60" required>
+        </div>
+        <input type="submit" value="Submit">
+    </form>
+
+</body>
+</html>

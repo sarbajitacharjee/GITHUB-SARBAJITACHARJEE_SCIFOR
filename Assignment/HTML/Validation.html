@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Form</title>
+    <style>
+        
+
+       
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #555;
+        }
+
+
+
+        
+    </style>
+</head>
+<body>
+
+    <form id="simpleForm">
+       
+
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" pattern="[a-z]+" required>
+
+        <label for="username">Username</label>
+        <input type="text" id="username" name="username" pattern="[a-z]+" required>
+
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" pattern="[a-z]+" required>
+
+        <label for="age">Age (18-60) :</label>
+        <input type="number" id="age" name="age" min="18" max="60" required>
+
+        
+        <input type="submit" value="Submit">
+    </form>
+
+    
+
+</body>
+</html>
