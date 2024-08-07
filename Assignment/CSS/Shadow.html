@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Styling </title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #918f8f;
+        }
+        .text-container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ddd;
+            background-color: #f9f9f9;
+        }
+        .text-shadow {
+            text-shadow: 4px 4px 4px rgba(54, 49, 49, 0.3);
+            font-size: 50px;
+            color: #333;
+        }
+        .text-overflow1 {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            width: 100%;
+            display: block;
+            font-size: 1.1em;
+            color: #403e3e;
+        }
+        .text-overflow2 {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow:clip;
+            width: 100%;
+            display: block;
+            font-size: 1.1em;
+            color: #857878;
+        }
+        .text-justify {
+            text-align: justify;
+            font-size: 30px;
+            color: #918f8f;
+        }
+    </style>
+</head>
+<body>
+    <div class="text-container">
+        <p class="text-shadow">This is a example of text shadow & Text overflow & text justify</p>
+
+        <p class="text-overflow1">This text is an example of text overflow ellipsis. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sapiente, error nobis! Dolores?</p>
+        <p class="text-overflow2">This text is an example of text overflow Clip. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sapiente, error nobis! Dolores?</p>
+
+        <p class="text-justify">This paragraph is  justified text.</p>
+    </div>
+</body>
+</html>
