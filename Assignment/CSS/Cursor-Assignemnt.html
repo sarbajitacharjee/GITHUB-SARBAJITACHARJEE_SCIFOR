@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Cursor</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            line-height: 1.5;
+        }
+
+        h1 {
+            cursor: pointer; 
+            color: #333;
+        }
+
+        h2 {
+            cursor: help; 
+            color: #555;
+        }
+
+        p {
+            cursor: text; 
+            color: #444;
+        }
+
+        p::first-line {
+            font-weight: bold; 
+            text-decoration:line-through;
+        }
+
+        p::first-letter {
+            font-size: 2em; 
+            color: #e63946; 
+        }
+
+        div {
+            cursor: crosshair; 
+            padding: 10px;
+            border: 1px solid #ccc;
+            margin-top: 20px;
+            background-color: #f8f9fa;
+        }
+
+        div::before {
+            content: "Note: "; 
+            font-weight: bold;
+            color: #007bff;
+        }
+
+        div::after {
+            content: " After Text"; 
+            color: #e63946;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Heading 1</h1>
+    <h2>Subheading</h2>
+    <p>This is a paragraph with some text. The first letter is styled differently, and the first line is bold.</p>
+
+    <div>This is a simple Letter </div>
+
+</body>
+</html>
