@@ -6,52 +6,41 @@
     <title>Styled Webpage</title>
     <style>
         :root {
-    --primary-color: skyblue; 
-    --secondary-color: #50C878; 
-    --text-color: darkgray;
-    --button-padding: 12px 24px;
-    --border-radius: 8px;
-}
+            --primary-color: skyblue; 
+            --secondary-color: #50C878; 
+            --text-color: darkgray;
+            --button-padding: 12px 24px;
+            --border-radius: 8px;
+        }
 
-h1 {
-    color: var(--primary-color);
-}
-h1 {
-    position: relative;
-    display: inline-block;
-    overflow: hidden;
-}
+        h1 {
+            color: var(--text-color);
+        }
 
-h1::before {
-    content: "Welcome"; 
-    color: royalblue;
-    position: absolute;
-    left: 0;
-    top: 0;
-    z-index: 1;
-}
+        h1 .first-word {
+            color: royalblue; 
+        }
 
-p {
-    color: var(--text-color);
-}
+        p {
+            color: var(--text-color);
+        }
 
-button {
-    background-color: var(--secondary-color);
-    color: #fff;
-    padding: var(--button-padding);
-    border-radius: var(--border-radius);
-    border: none;
-    cursor: pointer;
-}
+        button {
+            background-color: var(--secondary-color);
+            color: #fff;
+            padding: var(--button-padding);
+            border-radius: var(--border-radius);
+            border: none;
+            cursor: pointer;
+        }
 
-button:hover {
-    background-color: var(--primary-color);
-}
-
+        button:hover {
+            background-color: var(--primary-color);
+        }
     </style>
 </head>
 <body>
-    <h1>Welcome to My Webpage</h1>
+    <h1><span class="first-word">Welcome</span> to My Webpage</h1>
     <p>This is a paragraph styled with dark gray text color.</p>
     <button>Click Me!</button>
 </body>
