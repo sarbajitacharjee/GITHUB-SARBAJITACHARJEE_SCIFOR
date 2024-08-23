@@ -3,7 +3,8 @@
     "development"
   ],
   "hints": {
-    "axe/language": "off"
+    "axe/language": "off",
+    "axe/parsing": "off"
   },
   "browserslist": [
     "defaults",
