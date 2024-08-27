@@ -4,7 +4,8 @@
   ],
   "hints": {
     "axe/language": "off",
-    "axe/parsing": "off"
+    "axe/parsing": "off",
+    "axe/forms": "off"
   },
   "browserslist": [
     "defaults",
