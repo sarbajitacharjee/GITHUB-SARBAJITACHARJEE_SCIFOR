@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      document.write("<h1>For Loop:</h1> ");
+      for (let i = 0; i < 10; i++) {
+        if (i === 3) {
+          continue;
+        }
+        if (i === 7) {
+          document.write("<br>break");
+          break;
+        }
+        document.write("<br>", i);
+      }
+
+      document.write("<br><h1>While Loop:</h1> ");
+
+      let j = 0;
+      while (j < 10) {
+        j++;
+        if (j === 4) {
+          continue;
+        }
+        if (j === 8) {
+          document.write("<br>break");
+
+          break;
+        }
+        document.write("<br>", j);
+      }
+
+      document.write("<h1>Do-While Loop:</h1>");
+
+      let k = 0;
+      do {
+        k++;
+        if (k === 5) {
+          continue;
+        }
+        if (k === 9) {
+          document.write("<br>break");
+
+          break;
+        }
+        document.write("<br>", k);
+      } while (k < 10);
+    </script>
+  </body>
+</html>
