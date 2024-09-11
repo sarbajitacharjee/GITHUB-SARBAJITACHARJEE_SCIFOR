@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local vs Global Scope</title>
+</head>
+<body>
+    <h1>Local vs Global Scope </h1>
+
+    <script>
+        var globalVar = " global variable";
+
+        function scopeTest() {
+            var localVar = " local variable";
+
+            document.write("<p>Inside function: " + globalVar + "</p>");
+
+            document.write("<p>Inside function: " + localVar + "</p>");
+        }
+
+        scopeTest();
+
+        document.write("<p>Outside function: " + globalVar + "</p>");
+        document.write("<p>Outside function: " + localVar + "</p>");
+
+    </script>
+</body>
+</html>
