@@ -1,5 +1,5 @@
 # GITHUB-SARBAJITACHARJEE_SCIFOR
-This Repo is For Trainning purpose and Their is Some small and big projects Included You can check or Yousee demo 
+This Repo is For Trainning purpose and Their is Some small and big projects Included You can check or You see demo 
 
 # Demo
 
