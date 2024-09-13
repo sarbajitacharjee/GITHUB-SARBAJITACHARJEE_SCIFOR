@@ -166,7 +166,7 @@
                     result = value1 % value2;
                     break;
                 default:
-                    result = "Invalid operator. Select a correct one.";
+                    result = "Invalid operator❗ Select a correct one.";
             }
 
             document.getElementById("result").textContent = "Result: " + result;
@@ -176,7 +176,7 @@
             const squareValue = parseFloat(document.getElementById("squareValue").value);
 
             if (isNaN(squareValue)) {
-                document.getElementById("result").textContent = "Enter a valid number to square.";
+                document.getElementById("result").textContent = "Enter a valid number";
                 return;
             }
 
