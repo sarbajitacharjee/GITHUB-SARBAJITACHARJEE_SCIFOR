@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculator</title>
+    <title>Calculator </title>
     <style>
         * {
             margin: 0;
@@ -12,7 +12,7 @@
         }
 
         body {
-            font-family:cursive;
+            font-family: cursive;
             background-color: #CCE0AC;
             display: flex;
             justify-content: center;
@@ -24,7 +24,7 @@
             background-color: #ecf0f1;
             padding: 20px;
             border-radius: 12px;
-            width: 400px;
+            width: 800px;
             text-align: center;
         }
 
@@ -46,7 +46,7 @@
             border-radius: 8px;
             font-size: 1.1em;
             background-color: #bdc3c7;
-            width: 120px;
+            width: 320px;
             text-align: center;
         }
 
@@ -75,7 +75,7 @@
             background-color: #124104;
         }
 
-        button.calculate {
+        button.calculate, button.square {
             width: 100%;
             padding: 12px;
             margin-top: 20px;
@@ -87,7 +87,7 @@
             cursor: pointer;
         }
 
-        button.calculate:hover {
+        button.calculate:hover, button.square:hover {
             background-color: #149550;
         }
 
@@ -102,7 +102,7 @@
 <body>
 
     <div class="calculator">
-        <h2>Calculator </h2>
+        <h2>Calculator & Square Function</h2>
         <div class="input-section">
             <input type="number" id="value1" placeholder="First Number">
             <input type="number" id="value2" placeholder="Second Number">
@@ -117,6 +117,12 @@
         </div>
 
         <button class="calculate" onclick="calculate()">Calculate</button>
+
+        <div class="input-section" style="margin-top: 20px;">
+            <input type="number" id="squareValue" placeholder=" Enter Number for Square">
+        </div>
+        <button class="square" onclick="square()">Square</button>
+
         <p id="result"></p>
     </div>
 
@@ -139,11 +145,9 @@
             let result;
 
             if (isNaN(value1) || isNaN(value2)) {
-                document.getElementById("result").textContent = "enter valid numbers.";
+                document.getElementById("result").textContent = "Enter valid numbers.";
                 return;
             }
-
-           
 
             switch (operator) {
                 case "+":
@@ -162,10 +166,22 @@
                     result = value1 % value2;
                     break;
                 default:
-                    result = "Invalid operator ❗ Enter Correct one";
+                    result = "Invalid operator. Select a correct one.";
             }
 
             document.getElementById("result").textContent = "Result: " + result;
+        }
+
+        function square() {
+            const squareValue = parseFloat(document.getElementById("squareValue").value);
+
+            if (isNaN(squareValue)) {
+                document.getElementById("result").textContent = "Enter a valid number to square.";
+                return;
+            }
+
+            const result = squareValue * squareValue;
+            document.getElementById("result").textContent = "Square of " + squareValue + " is: " + result;
         }
     </script>
 
