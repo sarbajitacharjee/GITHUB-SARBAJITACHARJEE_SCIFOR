@@ -35,3 +35,6 @@ input#d {
 .mod{
     background-color: yellowgreen;
 }
+.mod:hover{
+    background-color: rgb(126, 179, 19);
+}
