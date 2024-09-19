@@ -1,0 +1,22 @@
+<!-- data.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Response</title>
+</head>
+<body>
+    <h1>Post Request Response</h1>
+    <p>Data received from the client: <span id="receivedData"></span></p>
+
+    <script>
+        // Extract query string (POST data in this case) from the URL
+        var queryParams = new URLSearchParams(window.location.search);
+        var receivedData = queryParams.get('data');
+        
+        // Display the received data
+        document.getElementById("receivedData").textContent = receivedData;
+    </script>
+</body>
+</html>

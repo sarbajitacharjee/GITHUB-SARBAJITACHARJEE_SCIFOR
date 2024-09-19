@@ -1,0 +1,45 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AJAX POST Example</title>
+    <script>
+        function sendPostRequest() {
+            // Create a new XMLHttpRequest object
+            var xhr = new XMLHttpRequest();
+
+            // Define what happens on successful data submission
+            xhr.onreadystatechange = function () {
+                // Ready state is 4, and status is 200 (OK)
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    // Display the server response in the DOM
+                    document.getElementById("content").innerHTML = xhr.responseText;
+                }
+            };
+
+            // Initialize the request (POST method)
+            xhr.open("POST", "data.html", true);
+            xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+
+            // Get the data to send
+            var dataToSend = document.getElementById("dataInput").value;
+
+            // Send the request with data
+            xhr.send("data=" + encodeURIComponent(dataToSend));
+        }
+    </script>
+</head>
+<body>
+    <h1>AJAX POST Example with XMLHttpRequest</h1>
+
+    <!-- Input to simulate posting data -->
+    <input type="text" id="dataInput" placeholder="Enter some data" />
+    <button onclick="sendPostRequest()">Send POST Request</button>
+
+    <div id="content">
+        <!-- Response from data.html will be displayed here -->
+    </div>
+</body>
+</html>

@@ -13,8 +13,8 @@
                     document.getElementById("content").innerHTML = xhr.responseText;
                 }
             };
-            xhr.open("GET", "index.html", true);
-            xhr.send();
+            xhr.open("POST", "index.html", true);
+            xhr.send("abcd");
         }
     </script>
 </head>
