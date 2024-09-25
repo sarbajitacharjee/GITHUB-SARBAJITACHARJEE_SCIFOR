@@ -197,7 +197,7 @@ h1, h2 {
 .about-section h2 {
     color: #007bff;
     text-align: center;
-    margin-bottom: 50px;
+    margin-bottom: 55px;
     font-size: 2.5rem;
     position: relative;
 }
@@ -215,7 +215,7 @@ h1, h2 {
 
 .about-container {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     flex-wrap: wrap;
     animation: fadeInUp 1.5s ease-in-out;
@@ -223,7 +223,7 @@ h1, h2 {
 
 .profile-photo {
     width: 300px;
-    height: 300px;
+    height: 350px;
     border-radius: 50%;
     box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.15);
     transition: transform 0.3s ease;
@@ -256,7 +256,7 @@ h1, h2 {
 .skills-list li {
     font-size: 1.2rem;
     margin-right: 20px;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
     display: flex;
     align-items: center;
     font-weight: 500;
@@ -291,58 +291,99 @@ h1, h2 {
     }
 }
 
+
   
   /* Projects Section */
-  .projects-section {
+  /* General Styles for Projects Section */
+.projects-section {
     padding: 100px 0;
     background-color: #f8f9fa;
-  }
-  
-  .projects-section h2 {
+}
+
+.projects-section h2 {
     color: #007bff;
     text-align: center;
     margin-bottom: 40px;
-  }
-  
-  .projects-grid {
+    font-size: 2.5rem;
+    letter-spacing: 1.5px;
+}
+
+.projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 30px;
     padding: 20px;
-  }
-  
-  .project {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Individual Project Card Styles */
+.project {
     background-color: #fff;
-    border-radius: 10px;
+    border-radius: 12px;
     box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.1);
     overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     text-align: center;
     padding: 20px;
-  }
-  
-  .project img {
+}
+
+.project img {
     width: 100%;
-    height: auto;
-    border-bottom: 4px solid #007bff;
-    transition: transform 0.3s ease;
-  }
-  
-  .project h3 {
-    font-size: 1.4rem;
+    height: 200px;
+    object-fit: cover;
+    border-bottom: 5px solid #007bff;
+    transition: transform 0.4s ease;
+}
+
+.project h3 {
+    font-size: 1.6rem;
     margin: 20px 0;
-  }
-  
-  .project p {
+}
+
+.project p {
     font-size: 1rem;
     color: #666;
     margin-bottom: 10px;
-  }
-  
-  .project:hover {
+}
+
+/* Hover Animation */
+.project:hover {
     transform: translateY(-10px);
     box-shadow: 0px 12px 20px rgba(0, 0, 0, 0.2);
-  }
+}
+
+.project:hover img {
+    transform: scale(1.05);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .project img {
+        height: 180px;
+    }
+
+    .project {
+        padding: 15px;
+    }
+}
+
+/* Fade-In Scroll Animation */
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.in-view {
+    opacity: 1;
+    transform: translateY(0);
+}
+
   
   /* Contact Section */
   .contact-section {

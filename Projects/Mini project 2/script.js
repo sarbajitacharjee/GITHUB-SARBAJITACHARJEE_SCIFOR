@@ -29,3 +29,23 @@ document.getElementById('contact-form').addEventListener('submit', function(even
     event.preventDefault();
   }
 });
+
+
+    // Select all the elements that should fade in
+    const faders = document.querySelectorAll('.fade-in');
+
+    // Create an IntersectionObserver to watch the elements
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('in-view');  // Add 'in-view' class when the element is in the viewport
+                observer.unobserve(entry.target);  // Optional: Stop observing once the animation is triggered
+            }
+        });
+    }, { threshold: 0.2 });  // Trigger when 20% of the element is visible
+
+    // Attach the observer to each fade-in element
+    faders.forEach(fade => {
+        observer.observe(fade);
+    });
+
