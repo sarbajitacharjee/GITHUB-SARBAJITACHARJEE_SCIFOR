@@ -3,25 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fetch API Example</title>
+    <title>Document</title>
 </head>
 <body>
-    <h1>Fetch Movies Data</h1>
-    <button id="fetchButton">Fetch Movies</button>
+    <h1>Async/Await</h1>
+    <button id="btn">Fetch Movies</button>
 
     <script>
-        
         async function fetchMovies() {
-           
-                const response = await fetch('https://dummyapi.online/api/movies');
-                
-                const data = await response.json();
-                console.log(data); 
             
+            const response = await fetch('https://dummyapi.online/api/movies');
+            const data = await response.json();
+            console.log(data);
         }
-
-        
-        document.getElementById('fetchButton').addEventListener('click', fetchMovies);
+        document.getElementById('btn').addEventListener('click', fetchMovies);
     </script>
 </body>
 </html>
