@@ -3,34 +3,28 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-  }
-  
-  body {
+}
+
+body {
     font-family: 'Poppins', sans-serif;
     background-color: #f4f4f9;
     color: #333;
     line-height: 1.6;
     scroll-behavior: smooth;
-  }
-  
-  a {
+}
+
+a {
     text-decoration: none;
     color: inherit;
-  }
-  
-  h1, h2 {
+}
+
+h1, h2 {
     margin-bottom: 20px;
     font-weight: 700;
-  }
-  
-  .container {
-    width: 85%;
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-  
-  /* Navbar Styles */
-  .navbar {
+}
+
+/* Navbar Styles */
+.navbar {
     background-color: #ffffff;
     padding: 15px 0;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
@@ -38,37 +32,59 @@
     width: 100%;
     top: 0;
     z-index: 100;
-  }
-  
-  .navbar .navbar-brand {
+}
+
+.navbar .navbar-brand {
     font-size: 1.5rem;
     font-weight: bold;
     color: #007bff;
-  }
-  
-  .navbar-nav {
+}
+
+.navbar-nav {
     margin-left: auto;
-  }
-  
-  .nav-item {
+}
+
+.nav-item {
     margin-left: 20px;
-  }
-  
-  .nav-link {
+}
+
+.nav-link {
     font-size: 1rem;
     padding: 10px 15px;
     transition: color 0.3s ease;
-  }
-  
-  .nav-link:hover {
+}
+
+.nav-link:hover {
     color: #007bff;
+}
+
+@media (max-width: 768px) {
+    .nav-item {
+        margin-left: 0; /* Reset margin for smaller screens */
+    }
+
+    .nav-link {
+        padding: 10px; /* Consistent padding */
+    }
+
+    .navbar {
+        padding: 10px 0; /* Reduce padding for smaller screens */
+    }
+
+    .navbar .navbar-brand {
+        font-size: 1.3rem; /* Smaller brand font size */
+    }
+}
+.container {
+    width: 85%;
+    max-width: 1200px;
+    margin: 0 auto;
   }
-  
-  /* Home Section */
-  
+
+
   /* Home Section */
 .home-section {
-    background-image: linear-gradient(to bottom right, rgba(0, 123, 255, 0.8), rgba(0, 123, 255, 0.6)), url('https://images.unsplash.com/photo-1436262513933-a0b06755c784?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+    background-image: linear-gradient(to bottom right, rgba(0, 123, 255, 0.8), rgba(0, 123, 255, 0.6)), url('https://images.unsplash.com/photo-1505740420928-5e560c06d30e?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
     background-size: cover;
     background-position: center;
     color: #ffffff;
@@ -80,17 +96,12 @@
     text-align: center;
     padding: 20px;
     position: relative;
-    overflow: hidden; /* Ensure no overflow */
-    clip-path: ellipse(75% 55% at 50% 0%); /* Adjusted upward ellipse clip */
+    overflow: hidden;
   }
   
   /* Welcome Message */
-  .welcome-message {
-    max-width: 90%; /* Limit width to prevent overflow */
-  }
-  
   .welcome-message h1 {
-    font-size: 3vw; /* Adjusted responsive font size */
+    font-size: 3.3rem;
     font-weight: 700;
     letter-spacing: 2px;
     margin-bottom: 20px;
@@ -98,51 +109,50 @@
   }
   
   .welcome-message p {
-    font-size: 1.2rem;
-    font-weight: 300;
+    font-size:1.4rem;
+    font-weight: 500;
     margin-bottom: 30px;
     max-width: 700px;
     line-height: 1.6;
+    text-align: center;
     animation: fadeInUp 1.2s ease-in-out;
   }
   
+  .clipped-text {
+    font-size: 7vw; 
+    font-weight: bold; 
+    background: linear-gradient(to right, #f9d74e, #f2c94c); 
+    -webkit-background-clip: text; 
+    background-clip: text; 
+    color: transparent; 
+    animation: textGlow 1.5s infinite alternate; 
+    padding: 10px; 
+    margin: 20px 0; 
+    text-align: center; 
+  } 
+  
+  
   /* Clipped Button */
-  .welcome-message a {
-    background-color: #ffffff;
-    color: #007bff;
+  .clipped-button {
     padding: 12px 30px;
     font-size: 1.1rem;
     font-weight: bold;
-    border-radius: 50px;
-    text-transform: uppercase;
-    transition: background-color 0.3s ease, color 0.3s ease;
-    box-shadow: 0 4px 15px rgba(0, 123, 255, 0.4);
-    position: relative; /* Position relative for pseudo-element */
-    overflow: hidden; /* Hide overflow */
+    color: white; 
+    background: linear-gradient(135deg, #00c6ff, #0072ff);
+    border: none;
+    border-radius: 30px; 
+    text-decoration: none;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    margin-top: 20px;
+  }
+
+  .clipped-button:hover{
+    transform: scale(1.1);
+    background: linear-gradient(135deg,#0072ff, #00c6ff);
   }
   
-  .welcome-message a::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(255, 255, 255, 0.2); /* Light overlay */
-    transform: translateY(-100%); /* Move up initially */
-    transition: transform 0.3s ease;
-    border-radius: 50px; /* Match button border radius */
-  }
   
-  .welcome-message a:hover {
-    background-color: #007bff;
-    color: #ffffff;
-    box-shadow: 0 6px 20px rgba(0, 123, 255, 0.6);
-  }
-  
-  .welcome-message a:hover::before {
-    transform: translateY(0); /* Slide down on hover */
-  }
   
   /* Animations */
   @keyframes fadeInDown {
@@ -164,22 +174,6 @@
     to {
       opacity: 1;
       transform: translateY(0);
-    }
-  }
-  
-  /* Responsive Design */
-  @media (max-width: 768px) {
-    .welcome-message h1 {
-      font-size: 12vw; /* Adjust size for smaller screens */
-    }
-    
-    .welcome-message p {
-      font-size: 1rem; /* Smaller text on mobile */
-    }
-    
-    .welcome-message a {
-      padding: 10px 20px; /* Smaller button padding */
-      font-size: 1rem; /* Smaller button text */
     }
   }
   
