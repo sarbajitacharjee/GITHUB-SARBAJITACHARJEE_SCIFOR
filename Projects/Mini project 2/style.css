@@ -188,48 +188,109 @@ h1, h2 {
   
   
   /* About Me Section */
-  .about-section {
-    padding: 100px 0;
-    background-color: #ffffff;
-  }
   
-  .about-section h2 {
+.about-section {
+    padding: 100px 0;
+    background-color: #f4f4f9;
+}
+
+.about-section h2 {
     color: #007bff;
     text-align: center;
-    margin-bottom: 40px;
-  }
-  
-  .about-container {
+    margin-bottom: 50px;
+    font-size: 2.5rem;
+    position: relative;
+}
+
+.about-section h2::before {
+    content: '';
+    position: absolute;
+    width: 80px;
+    height: 3px;
+    background-color: #007bff;
+    top: 120%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.about-container {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
-  }
-  
-  .profile-photo {
-    width: 250px;
-    height: 250px;
+    animation: fadeInUp 1.5s ease-in-out;
+}
+
+.profile-photo {
+    width: 300px;
+    height: 300px;
     border-radius: 50%;
-    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
-  }
-  
-  .bio {
-    max-width: 500px;
-  }
-  
-  .bio p {
-    font-size: 1.1rem;
-    margin-bottom: 20px;
-  }
-  
-  .bio ul {
+    box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease;
+}
+
+.profile-photo:hover {
+    transform: scale(1.05);
+}
+
+.bio {
+    max-width: 600px;
+    padding: 20px;
+    animation: fadeInUp 1.2s ease-in-out;
+}
+
+.intro-text {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    line-height: 1.6;
+    color: #555;
+}
+
+.skills-list {
     list-style: none;
-  }
-  
-  .bio ul li {
+    padding-left: 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.skills-list li {
+    font-size: 1.2rem;
+    margin-right: 20px;
     margin-bottom: 10px;
-    font-size: 1rem;
-  }
+    display: flex;
+    align-items: center;
+    font-weight: 500;
+    color: #333;
+    transition: color 0.3s ease;
+}
+
+.skills-list li:hover {
+    color: #007bff;
+}
+
+.skills-list i {
+    font-size: 2rem;
+    margin-right: 10px;
+    color: #f9d74e;
+    transition: color 0.3s ease;
+}
+
+.skills-list li:hover i {
+    color: #007bff;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
   
   /* Projects Section */
   .projects-section {
