@@ -425,9 +425,6 @@ h2 {
   transform: translateY(0);
 }
 
-/* Blogs Section */
-
-
 
 /* Blog Section */
 .blog-section {
@@ -440,6 +437,7 @@ h2 {
 .blog-section h2 {
   color: #007bff;
   margin-bottom: 60px;
+  position: relative;
 }
 
 /* Blog Card Grid Layout */
