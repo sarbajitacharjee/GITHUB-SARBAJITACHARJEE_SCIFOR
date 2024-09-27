@@ -49,6 +49,7 @@ document.getElementById('contact-form').addEventListener('submit', function(even
         observer.observe(fade);
     });
 
+    // -----------blog trigger ---------------
     window.addEventListener("scroll", function() {
       const blogContainer = document.querySelector('.blogs-container');
       const position = blogContainer.getBoundingClientRect().top;
