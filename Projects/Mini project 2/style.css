@@ -470,6 +470,8 @@ h2 {
   overflow: hidden;
   text-align: left;
   margin: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.341);
+
 }
 
 .blog-card:hover {
