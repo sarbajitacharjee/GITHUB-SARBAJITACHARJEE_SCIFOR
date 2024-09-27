@@ -31,7 +31,7 @@ document.getElementById('contact-form').addEventListener('submit', function(even
 });
 
 
-    // Select all the elements that should fade in
+    //  all the elements that should fade in
     const faders = document.querySelectorAll('.fade-in');
 
     // Create an IntersectionObserver to watch the elements
@@ -49,3 +49,13 @@ document.getElementById('contact-form').addEventListener('submit', function(even
         observer.observe(fade);
     });
 
+    window.addEventListener("scroll", function() {
+      const blogContainer = document.querySelector('.blogs-container');
+      const position = blogContainer.getBoundingClientRect().top;
+      const screenHeight = window.innerHeight;
+  
+      if (position < screenHeight - 100) {
+          blogContainer.classList.add('scroll-visible');
+      }
+  });
+  
