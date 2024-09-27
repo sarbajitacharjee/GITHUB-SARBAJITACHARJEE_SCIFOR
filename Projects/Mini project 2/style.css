@@ -429,21 +429,14 @@ h2 {
 
 
 
-.blog-section h2 {
-  margin: 0;
-  font-size: 2rem;
-  text-transform: uppercase;
-  margin-bottom: 40px;
-  position: relative;
-}
-
-/* Blog Section  */
+/* Blog Section */
 .blog-section {
-  padding: 100px 0;
+  padding: 100px 5%; /* Added side padding for smaller screens */
   background-color: #f8f9fa;
   text-align: center;
 }
 
+/* Blog Section Heading */
 .blog-section h2 {
   color: #007bff;
   margin-bottom: 60px;
@@ -452,8 +445,7 @@ h2 {
 /* Blog Card Grid Layout */
 .blogs-container {
   display: grid;
-
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Adjusted min width */
   gap: 20px;
   opacity: 0;
   transform: translateX(-100%);
@@ -469,11 +461,10 @@ h2 {
   transition: transform 0.3s ease;
   overflow: hidden;
   text-align: left;
-  margin: 10px;
   border: 1px solid rgba(0, 0, 0, 0.341);
-
 }
 
+/* Blog Card Hover Effect */
 .blog-card:hover {
   transform: translateY(-10px);
 }
@@ -492,6 +483,7 @@ h2 {
   margin: 20px 0;
 }
 
+/* Blog Card Paragraph */
 .blog-card p {
   font-size: 1rem;
   color: #666;
@@ -502,6 +494,45 @@ h2 {
   opacity: 1;
   transform: translateX(0);
 }
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .blog-section {
+    padding: 80px 3%; /* Less padding on smaller devices */
+  }
+
+  .blog-section h2 {
+    font-size: 1.8rem; /* Smaller font size for heading */
+    margin-bottom: 40px;
+  }
+
+  .blog-card h3 {
+    font-size: 1.2rem; /* Smaller font size for headings in cards */
+  }
+
+  .blog-card p {
+    font-size: 0.9rem; /* Smaller font size for paragraphs */
+  }
+}
+
+@media (max-width: 480px) {
+  .blog-section {
+    padding: 60px 2%; /* Further reduced padding */
+  }
+
+  .blog-section h2 {
+    font-size: 1.5rem; /* Even smaller heading size */
+  }
+
+  .blogs-container {
+    grid-template-columns: 1fr; /* Stack cards in a single column */
+  }
+
+  .blog-card {
+    margin: 10px 0; /* Added margin for spacing */
+  }
+}
+
 
 
 /* Contact Section */
