@@ -34,13 +34,17 @@ Welcome to my personal portfolio website! This is a responsive, modern web portf
 ### Screenshots:
 
 1. **Home Section**
-   ![Home Screenshot](./screenshots/home.png)
+   ![Home Screenshot](./img/home.png)
    
 2. **About Section**
-   ![About Screenshot](./screenshots/about.png)
+   ![About Screenshot](./img/about.png)
    
 3. **Projects Section**
-   ![Projects Screenshot](./screenshots/projects.png)
+   ![Projects Screenshot](./img/projects.png)
+4. **Blogs Section**
+   ![Projects Screenshot](./img/blogs.png)
+5. **Contact Section**
+   ![Projects Screenshot](./img/contact.png)
 
 
 
