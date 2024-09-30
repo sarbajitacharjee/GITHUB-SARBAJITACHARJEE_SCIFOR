@@ -3,12 +3,13 @@
 Welcome to my personal portfolio website! This is a responsive, modern web portfolio showcasing my projects, skills, and experiences as a web developer. The website is built using HTML, CSS, and JavaScript, and includes modern animations, smooth scrolling, and responsive design principles.
 
 ## Table of Contents
+
 - [Personal Portfolio Website](#personal-portfolio-website)
   - [Table of Contents](#table-of-contents)
   - [Features](#features)
   - [Technologies Used](#technologies-used)
   - [Demo \& Screenshots](#demo--screenshots)
-    - [Screenshots:](#screenshots)
+    - [Screenshots](#screenshots)
 
 ## Features
 
@@ -31,22 +32,17 @@ Welcome to my personal portfolio website! This is a responsive, modern web portf
 
 - **Live Demo**: [Demo Link](https://github-sarbajitacharjee-scifor.vercel.app/)
   
-### Screenshots:
+### Screenshots
 
 1. **Home Section**
    ![Home Screenshot](./img/home.png)
-   
+
 2. **About Section**
    ![About Screenshot](./img/about.png)
-   
+
 3. **Projects Section**
    ![Projects Screenshot](./img/projects.png)
 4. **Blogs Section**
    ![Projects Screenshot](./img/blogs.png)
 5. **Contact Section**
    ![Projects Screenshot](./img/contact.png)
-
-
-
-
-
