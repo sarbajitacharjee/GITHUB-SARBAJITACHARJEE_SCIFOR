@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fetch and AJAX Data in Styled Table</title>
+  <style>
+    
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f0f4f8;
+    }
+
+    h1 {
+      text-align: center;
+      color: #fff;
+      padding: 20px 0;
+      margin: 0;
+      background: linear-gradient(45deg, #5f82ff, #1f04ea);
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 40px auto;
+      background: #fff;
+      padding: 30px;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+    }
+
+    .button-group {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 30px;
+    }
+
+    button {
+      background: linear-gradient(45deg, #667eea, #764ba2); /*  gradient for buttons */
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      margin: 0 15px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background-color 0.3s;
+    }
+
+    button:hover {
+      background: linear-gradient(45deg, #5a67d8, #6b46c1); /* Darker hover effect */
+    }
+
+    /* Style the table and add a background image */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+      background-image: url('https://images.unsplash.com/photo-1472289065668-ce650ac443d2?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'); /* Subtle background */
+      background-color: #f9f9f9; /* Light background behind image */
+      background-size: cover;
+      border-radius: 10px;
+    }
+
+    th, td {
+      border: 1px solid #ccc;
+      padding: 12px;
+      text-align: left;
+    }
+
+    th {
+      background-color: #37474f; /* Darker table header */
+      color: white;
+    }
+
+    tr:nth-child(even) {
+      background-color: rgba(255, 255, 255, 0.8); /* Slight transparency to allow background image to show */
+    }
+
+    .output {
+      min-height: 150px;
+    }
+
+    .no-data {
+      text-align: center;
+      color: #888;
+      font-size: 18px;
+      padding: 20px 0;
+    }
+
+    
+  </style>
+</head>
+<body>
+
+  <h1>Fetched and AJAX API Data</h1>
+
+  <!-- Main Content Container -->
+  <div class="container">
+    <!-- Button group -->
+    <div class="button-group">
+      <button onclick="loadWithFetch()">Load with Fetch</button>
+      <button onclick="loadWithAjax()">Load with AJAX</button>
+    </div>
+
+    <!-- Div to display the fetched data -->
+    <div class="output" id="output">
+      <p class="no-data">Click a button to load data...</p> 
+    </div>
+  </div>
+
+  <script>
+    // Function to load users data using fetch
+    function loadWithFetch() {
+      fetch('https://dummyjson.com/users') // Fetch users from the API
+        .then(response => response.json()) // Parse the JSON from the response
+        .then(data => {
+          const users = data.users.slice(0, 20); // Get the first 20 users
+          displayTable(users, 'users'); // Call the function to display data in a table
+        })
+        .catch(error => console.error('Error fetching users:', error)); // Log any errors
+    }
+
+    // Function to load products data using AJAX (XMLHttpRequest)
+    function loadWithAjax() {
+      const xhr = new XMLHttpRequest();
+      xhr.open('GET', 'https://dummyjson.com/products', true);
+
+      xhr.onload = function() {
+        if (xhr.status === 200) {
+          const data = JSON.parse(xhr.responseText);
+          const products = data.products.slice(0, 20); // Get the first 20 products
+          displayTable(products, 'products'); // Call the function to display data in a table
+        } else {
+          console.error('Error fetching products:', xhr.statusText);
+        }
+      };
+
+      xhr.onerror = function() {
+        console.error('Request failed');
+      };
+
+      xhr.send(); // Send the request
+    }
+
+    // Function to dynamically create and display the table
+    function displayTable(data, type) {
+      const outputDiv = document.getElementById('output');
+      outputDiv.innerHTML = ''; // Clear previous content
+
+      // Create table element
+      const table = document.createElement('table');
+
+      // Create table headers based on type (users or products)
+      const headers = document.createElement('tr');
+      if (type === 'users') {
+        headers.innerHTML = `
+          <th>ID</th>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>Email</th>
+        `;
+      } else if (type === 'products') {
+        headers.innerHTML = `
+          <th>ID</th>
+          <th>Title</th>
+          <th>Price</th>
+          <th>Category</th>
+        `;
+      }
+
+      table.appendChild(headers); // Append headers to table
+
+      // Populate table rows with data
+      data.forEach(item => {
+        const row = document.createElement('tr');
+        if (type === 'users') {
+          row.innerHTML = `
+            <td>${item.id}</td>
+            <td>${item.firstName}</td>
+            <td>${item.lastName}</td>
+            <td>${item.email}</td>
+          `;
+        } else if (type === 'products') {
+          row.innerHTML = `
+            <td>${item.id}</td>
+            <td>${item.title}</td>
+            <td>${item.price}</td>
+            <td>${item.category}</td>
+          `;
+        }
+        table.appendChild(row); // Append each row to the table
+      });
+
+      outputDiv.appendChild(table); // Append the table to the output div
+    }
+  </script>
+  
+</body>
+</html>
