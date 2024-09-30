@@ -6,3 +6,4 @@ This Repo is For Trainning purpose and Their is Some small and big projects Incl
 Responsive website : https://github-sarbajitacharjee-scifor.vercel.app/
 
 Mini Project 1 : https://simple-ecommerce-sage.vercel.app/
+Mini Project 2 : https://github-sarbajitacharjee-scifor.vercel.app/
