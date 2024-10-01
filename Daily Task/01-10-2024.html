@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>React Class Component Example</title>
+</head>
+<body>
+  <div id="root"></div>
+
+
+  <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+  <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+
+  <script type="text/babel">
+    class UserInfo extends React.Component {
+      constructor(props) {
+        super(props);
+        this.state = {
+          name: 'Hello Me ',
+          email: ' hellome@example.com'
+        };
+      }
+
+      updateInfo = () => {
+        this.setState({
+          name: 'Sarbajit Acharjee',
+          email: 'Sarbajit@email.com'
+        });
+      };
+
+      render() {
+        return (
+          <div style={{ textAlign: 'center', marginTop: '50px' }}>
+            <h1>Display User Information</h1>
+            <p><strong>Name:</strong> {this.state.name}</p>
+            <p><strong>Email:</strong> {this.state.email}</p>
+            <button onClick={this.updateInfo}>Update </button>
+          </div>
+        );
+      }
+    }
+
+
+    ReactDOM.render(<UserInfo />, document.getElementById('root'));
+  </script>
+</body>
+</html>
