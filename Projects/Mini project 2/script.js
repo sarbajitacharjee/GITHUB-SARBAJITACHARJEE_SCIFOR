@@ -9,6 +9,7 @@ window.onscroll = function() {
   }
 };
 
+
 backToTopBtn.addEventListener("click", function() {
   window.scrollTo({ top: 0, behavior: "smooth" });
 });
@@ -19,7 +20,7 @@ document.getElementById('contact-form').addEventListener('submit', function(even
   let email = document.getElementById('email').value;
   let subject = document.getElementById('subject').value;
   let message = document.getElementById('message').value;
-  let emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+  let emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;    // regular expression
 
   if (name === "" || email === "" || subject === "" || message === "") {
     alert("Please fill all fields.");
@@ -34,7 +35,7 @@ document.getElementById('contact-form').addEventListener('submit', function(even
     //  all the elements that should fade in
     const faders = document.querySelectorAll('.fade-in');
 
-    // Create an IntersectionObserver to watch the elements
+    // Created an IntersectionObserver to watch the elements
     const observer = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
