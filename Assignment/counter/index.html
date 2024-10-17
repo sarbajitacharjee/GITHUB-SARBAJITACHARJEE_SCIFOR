@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Counter</title>
+    <!-- React and ReactDOM CDN -->
+    <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+    <!-- Babel for JSX -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+        const { useState } = React;
+
+        function Counter() {
+            // useState hook to manage the counter's value
+            const [count, setCount] = useState(0);
+
+            // Increment, Decrement, and Reset handlers
+            const increment = () => setCount(count + 1);
+            const decrement = () => setCount(count - 1);
+            const reset = () => setCount(0);
+
+            return (
+                <div style={{ textAlign: 'center', marginTop: '50px' }}>
+                    <h1>Counter: {count}</h1>
+                    <button onClick={increment}>Increment</button>
+                    <button onClick={decrement} style={{ marginLeft: '10px' }}>Decrement</button>
+                    <button onClick={reset} style={{ marginLeft: '10px' }}>Reset</button>
+                </div>
+            );
+        }
+
+        // Render the Counter component inside the root div
+        ReactDOM.render(<Counter />, document.getElementById('root'));
+    </script>
+</body>
+</html>
