@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiple Backgrounds with CSS</title>
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <style>
+        
+body {
+    font-family: cursive,Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+    background-image: url('./image/sea.jpg');
+    background-position: center;
+}
+
+
+.background-container {
+    width: 80%;
+    height: 80%;
+    padding: 50px;
+    color: white;
+    text-align: center;
+    background-image: 
+        url('./image/fish1.jpg'), /* Bottom layer */
+        url('./image/turtle.jpg'), /* Middle layer */
+        linear-gradient(to right, #fff, #fff); /* Top layer */
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-blend-mode: multiply;
+    border-radius: 15px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.background-container h1 {
+    margin-bottom: 20px;
+}
+
+.background-container p {
+    margin-top: 0;
+}
+.cont{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    color: black;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0px 4px 10px rgba(32, 29, 29, 0.1);
+    text-align: center;
+    overflow: auto;
+    font-family: Arial, sans-serif;
+    font-size: 18px;
+    line-height: 1.5;
+    margin: 0;
+    padding: 0;
+    border-radius: 10px;
+    padding:20px;
+    margin-bottom: 20px;
+}
+    </style>
+</head>
+<body>
+    <div class="cont">
+    <h1>Multi-Background Presentation</h1>
+    <div class="background-container">
+    </div>
+    </div>
+</body>
+</html>

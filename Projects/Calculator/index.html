@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+ 
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container mt-5 p-5">
+        <div class="calculator bg-light p-4 rounded">
+            <h3 class="text-center">My Calculator</h3>
+            <input type="text" id="d" class="form-control mb-3 text-right" disabled>
+            <div class="row ">
+                <button class="btn btn-secondary col-3 clears" onclick="cleard()">C</button>
+                <button class="btn btn-secondary col-3" onclick="addnumber(7)">7</button>
+                <button class="btn btn-secondary col-3" onclick="addnumber(8)">8</button>
+                <button class="btn btn-secondary col-3" onclick="addnumber(9)">9</button>
+                <button class="btn btn-secondary col-3 mod" onclick="operator('/')">/</button>
+                <button class="btn btn-secondary col-3" onclick="addnumber(4)">4</button>
+                <button class="btn btn-secondary col-3" onclick="addnumber(5)">5</button>
+                <button class="btn btn-secondary col-3" onclick="addnumber(6)">6</button>
+                <button class="btn btn-secondary col-3 mod" onclick="operator('*')">*</button>
+                <button class="btn btn-secondary col-3" onclick="addnumber(1)">1</button>
+                <button class="btn btn-secondary col-3" onclick="addnumber(2)">2</button>
+                <button class="btn btn-secondary col-3" onclick="addnumber(3)">3</button>
+                <button class="btn btn-secondary col-3 mod" onclick="operator('-')">-</button>
+                <button class="btn btn-secondary col-3" onclick="addnumber(0)">0</button>
+                <button class="btn btn-secondary col-3" onclick="addnumber('00')">00</button>
+                <button class="btn btn-secondary col-3 " onclick="addnumber('000')">000</button>
+                <button class="btn btn-secondary col-3 mod" onclick="operator('%')">%</button>
+                <button class="btn btn-secondary col-3 mod" onclick="operator('+')">+</button>
+                <button class="btn btn-secondary col-6 calc" onclick="calculate()" style="font-size: 1.2em">=</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        let d = document.getElementById('d');
+        let val = 0;
+
+function addnumber(number) {
+    d.value += number;
+}
+
+function operator(op) {
+    d.value += ` ${op} `;
+}
+
+function cleard() {
+    d.value = '';
+}
+
+function calculate() {
+    try {
+        let result = eval(d.value.replace('%', '/100'));
+        d.value = result;
+    } catch (error) {
+        d.value = 'Error';
+    }
+}
+
+function add() {
+    val += parseFloat(d.value) ;
+    d.value = '';
+}
+
+function sub() {
+    val -= parseFloat(d.value) ;
+    d.value = '';
+}
+
+
+
+    </script>
+</body>
+</html>

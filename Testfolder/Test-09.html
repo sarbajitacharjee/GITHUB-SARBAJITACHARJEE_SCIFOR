@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator </title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: cursive;
+            background-color: #CCE0AC;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .calculator {
+            background-color: #ecf0f1;
+            padding: 20px;
+            border-radius: 12px;
+            width: 800px;
+            text-align: center;
+        }
+
+        .calculator h2 {
+            margin-bottom: 20px;
+            color: #2c3e50;
+        }
+
+        .input-section {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        input {
+            padding: 12px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1em;
+            background-color: #bdc3c7;
+            width: 300px;
+            text-align: center;
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+
+        .buttons button {
+            width: 60px;
+            padding: 12px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.2em;
+            background-color: #3498db;
+            color: white;
+            cursor: pointer;
+        }
+
+        .buttons button:hover {
+            background-color: #2980b9;
+        }
+
+        .buttons button.active {
+            background-color: #124104;
+        }
+
+        button.calculate, button.square {
+            width: 30%;
+            padding: 12px;
+            margin-top: 20px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.2em;
+            background-color: #19d266;
+            color: white;
+            cursor: pointer;
+            
+        }
+
+        button.calculate:hover, button.square:hover {
+            background-color: #149550;
+        }
+
+        p#result {
+            margin-top: 15px;
+            font-size: 1.2em;
+            color: #000;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="calculator">
+        <h2>Calculator & Square Function</h2>
+        <div class="input-section">
+            <input type="number" id="value1" placeholder="First Number">
+            <input type="number" id="value2" placeholder="Second Number">
+        </div>
+
+        <div class="buttons">
+            <button onclick="selectOperator('+')">+</button>
+            <button onclick="selectOperator('-')">-</button>
+            <button onclick="selectOperator('*')">*</button>
+            <button onclick="selectOperator('/')">/</button>
+            <button onclick="selectOperator('%')">%</button>
+        </div>
+
+        <button class="calculate" onclick="calculate()">Calculate</button>
+
+        <div class="input-section" style="margin-top: 20px;">
+            <input type="number" id="squareValue" placeholder=" Enter Number for Square">
+        </div>
+        <button class="square" onclick="square()">Square</button>
+
+        <p id="result"></p>
+    </div>
+
+    <script>
+        let operator = '';
+
+        function selectOperator(op) {
+            operator = op;
+
+            document.querySelectorAll('.buttons button').forEach(button => {
+                button.classList.remove('active');
+            });
+
+            event.target.classList.add('active');
+        }
+
+        function calculate() {
+            const value1 = parseFloat(document.getElementById("value1").value);
+            const value2 = parseFloat(document.getElementById("value2").value);
+            let result;
+
+            if (isNaN(value1) || isNaN(value2)) {
+                document.getElementById("result").textContent = "Enter valid numbers.";
+                return;
+            }
+
+            switch (operator) {
+                case "+":
+                    result = value1 + value2;
+                    break;
+                case "-":
+                    result = value1 - value2;
+                    break;
+                case "*":
+                    result = value1 * value2;
+                    break;
+                case "/":
+                    result = value1 / value2;
+                    break;
+                case "%":
+                    result = value1 % value2;
+                    break;
+                default:
+                    result = "Invalid operator❗ Select a correct one.";
+            }
+
+            document.getElementById("result").textContent = "Result: " + result;
+        }
+
+        function square() {
+            const squareValue = parseFloat(document.getElementById("squareValue").value);
+
+            if (isNaN(squareValue)) {
+                document.getElementById("result").textContent = "Enter a valid number";
+                return;
+            }
+
+            const result = squareValue * squareValue;
+            document.getElementById("result").textContent = "Square of " + squareValue + " is: " + result;
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comparison Checker</title>
+    <style>
+        body {
+            font-family: cursive;
+            margin: 20px;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+        }
+        input {
+            margin: 10px 0;
+            padding: 8px;
+            font-size: 16px;
+        }
+        button {
+            padding: 10px;
+            font-size: 16px;
+           
+        }
+        .result {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Comparison Checker</h1>
+        <label for="value1">Enter first value:</label>
+        <input type="text" id="value1">
+        <br>
+        <label for="value2">Enter second value:</label>
+        <input type="text" id="value2">
+        <br>
+        <button onclick="checkComparisons()">Check Comparisons</button>
+        <div class="result" id="result"></div>
+    </div>
+
+    <script>
+        function checkComparisons() {
+            
+            const value1 = document.getElementById('value1').value;
+            const value2 = document.getElementById('value2').value;
+            
+            
+            const numValue1 = parseFloat(value1);
+            const numValue2 = parseFloat(value2);
+       
+            const results = `
+                <h2>Comparison Results:</h2>
+                <p><strong>Equality (==):</strong> ${value1 == value2}</p>
+                <p><strong>Strict Equality (===):</strong> ${value1 === value2}</p>
+                <p><strong>Inequality (!=):</strong> ${value1 != value2}</p>
+                <p><strong>Strict Inequality (!==):</strong> ${value1 !== value2}</p>
+                <p><strong>Greater Than (>):</strong> ${numValue1 > numValue2}</p>
+                <p><strong>Less Than (<):</strong> ${numValue1 < numValue2}</p>
+                <p><strong>Greater Than or Equal To (>=):</strong> ${numValue1 >= numValue2}</p>
+                <p><strong>Less Than or Equal To (<=):</strong> ${numValue1 <= numValue2}</p>
+            `;
+
+         
+            document.getElementById('result').innerHTML = results;
+        }
+    </script>
+</body>
+</html>

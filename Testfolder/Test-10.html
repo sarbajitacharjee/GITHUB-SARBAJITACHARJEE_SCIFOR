@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GitHub Users Table</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      background: url('img2.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: #000;
+      font-size: large;
+      
+    }
+
+    h1 {
+      text-align: center;
+      color: #fff;
+      
+    }
+
+    table {
+      width: 80%;
+      margin: 20px auto;
+      border-collapse: collapse;
+      background-color: rgba(255, 255, 255, 0.8);
+      background: url('img2.jpg');
+
+    }
+
+    th, td {
+      padding: 10px;
+      text-align: center;
+      border-bottom: 1px solid #ddd;
+    }
+
+    th {
+      background-color: #4CAF50;
+      color: white;
+    }
+
+    td img {
+      width: 50px;
+      border-radius: 50%;
+    }
+
+    td a {
+      color: #f10000f1;
+      text-decoration: none;
+    }
+
+    td a:hover {
+      text-decoration: underline;
+    }
+
+    tbody tr:nth-child(even) {
+      background-color: rgba(240, 240, 240, 0.7);
+    }
+
+    #load-users {
+      display: block;
+      margin: 20px auto;
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    #load-users:hover {
+      background-color: #2a932f;
+    }
+  </style>
+</head>
+<body>
+  <h1>GitHub Users</h1>
+  <button id="load-users">Load GitHub Users</button>
+  <table id="github-users">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Username</th>
+        <th>Avatar</th>
+        <th>Profile URL</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+  <script>
+    document.getElementById('load-users').addEventListener('click', () => {
+      const apiUrl = 'https://api.github.com/users';
+      const tableBody = document.querySelector('#github-users tbody');
+      
+      fetch(apiUrl)
+        .then(response => response.json())
+        .then(users => {
+          tableBody.innerHTML = '';
+          users.forEach(user => {
+            const row = document.createElement('tr');
+            row.innerHTML = `
+              <td>${user.id}</td>
+              <td>${user.login}</td>
+              <td><img src="${user.avatar_url}" alt="${user.login}'s avatar"></td>
+              <td><a href="${user.html_url}" target="_blank">Profile</a></td>
+            `;
+            tableBody.appendChild(row);
+          });
+        })
+        .catch(error => console.error('Error fetching data:', error));
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> Condition Checker</title>
+  <style>
+   
+    input {
+      padding: 8px;
+    }
+    button {
+      padding: 10px 15px;
+      background-color: #007bff;
+      color: white;
+    }
+    
+    .result {
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Condition</h1>
+
+  <input type="number" id="inputA" placeholder="Enter A">
+
+  <input type="number" id="inputB" placeholder="Enter B">
+
+  <input type="number" id="inputC" placeholder="Enter C">
+
+  <button onclick="checkConditions()">Check</button>
+
+  <div class="result" id="result"></div>
+
+  <script>
+    function checkConditions() {
+      const A = parseInt(document.getElementById('inputA').value);
+      const B = parseInt(document.getElementById('inputB').value);
+      const C = parseInt(document.getElementById('inputC').value);
+      let resultText = '';
+
+      if (A > B && B > C) {
+        resultText += 'A is the largest.<br>';
+      }
+
+      if (A < B || B < C) {
+        resultText += 'One of the conditions is true.<br>';
+      }
+
+      if (A !== C) {
+        resultText += 'A and C are not equal.<br>';
+      }
+
+      document.getElementById('result').innerHTML = resultText;
+    }
+  </script>
+
+</body>
+</html>

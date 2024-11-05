@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Arithimatic</title>
+    <style>
+        body {
+    
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    
+}
+
+.calculator {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    width: 300px;
+}
+
+
+input {
+    width: 80%;
+    margin: 10px 0;
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+
+button {
+    padding: 10px 20px;
+    margin: 10px 5px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: white;
+    font-size: 16px;
+}
+button:hover{
+    background-color: #064990;
+}
+
+#result {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+    </style>
+</head>
+<body>
+    <div class="calculator">
+        <h1>Simple Calculator</h1>
+        <input type="number" id="input1" placeholder="Enter first number">
+        <input type="number" id="input2" placeholder="Enter second number">
+        
+        <div class="buttons">
+            <button onclick="calculate('add')">Addition</button>
+            <button onclick="calculate('subtract')">Subtraction</button>
+            <button onclick="calculate('multiply')">Multiplication</button>
+            <button onclick="calculate('divide')">Division</button>
+            <button onclick="calculate('modulus')">Modulus</button>
+        </div>
+        
+        <div id="result"></div>
+    </div>
+    <script>
+        function calculate(operation) {
+    const input1 = parseFloat(document.getElementById('input1').value);
+    const input2 = parseFloat(document.getElementById('input2').value);
+    
+    // document.write(" ADD :",input1+input2)
+    // document.write(" SUB :",input1-input2)
+    // document.write(" MUL : ",input1*input2)
+    // document.write(" DIV : ",input1/input2)
+    // document.write(" MOD : ",input1%input2)
+    let result;
+
+    if (isNaN(input1) || isNaN(input2)) {
+        result = "Please enter valid numbers";
+    } else {
+        switch (operation) {
+            case 'add':
+                result = input1 + input2;
+                break;
+            case 'subtract':
+                result = input1 - input2;
+                break;
+            case 'multiply':
+                result = input1 * input2;
+                break;
+            case 'divide':
+                result = input1 / input2;
+                break;
+            case 'modulus':
+                result = input1 % input2;
+                break;
+            default:
+                result = "Unknown operation";
+        }
+    }
+
+    document.getElementById('result').innerText = "Result: " + result;
+}
+
+    </script>
+</body>
+</html>

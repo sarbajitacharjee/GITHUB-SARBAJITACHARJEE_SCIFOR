@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AJAX Example</title>
+    <script>
+        function loadContent() {
+            var xhr = new XMLHttpRequest();
+
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    document.getElementById("content").innerHTML = xhr.responseText;
+                }
+            };
+            xhr.open("POST", "index.html", true);
+            xhr.send("abcd");
+        }
+    </script>
+</head>
+<body>
+    <h1>AJAX Example with XMLHttpRequest</h1>
+    <button onclick="loadContent()">Load Content</button>
+    <div id="content">
+    </div>
+</body>
+</html>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Foundation</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.6.3/css/foundation.min.css">
+    <style>
+        body {
+            background-color: #f4f4f4;
+            font-family: cursive, 'Arial', sans-serif;
+            padding: 2rem;
+        }
+
+        .card {
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
+            padding: 1rem;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+        }
+
+        .card-img {
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .card-section {
+            padding: 1.5rem;
+        }
+
+        .card-title {
+            font-size: 1.75rem;
+            margin-bottom: 0.75rem;
+            color: #333;
+            font-weight: bold;
+        }
+
+        .card-description {
+            font-size: 1rem;
+            color: #555;
+            margin-bottom: 1.25rem;
+            line-height: 1.5;
+        }
+
+        .card-button {
+            padding: 0.75rem 1.5rem;
+            text-align: center;
+            border-radius: 8px;
+            display: inline-block;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .card-button:hover {
+            transform: scale(1.05);
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <div class="grid-container">
+        <div class="grid-x grid-margin-x small-up-1 medium-up-2 large-up-3">
+            
+            <div class="cell">
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1528916401851-7c92e2a4d34c?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="img1"
+                        class="card-img">
+                    <div class="card-section">
+                        <h3 class="card-title text-primary">Card Title 1</h3>
+                        <p class="card-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi, magni dolore blanditiis error officiis ut iusto voluptatem quidem aperiam dicta.</p>
+                        <a href="#" class="button card-button success">Learn More</a>
+                    </div>
+                </div>
+            </div>
+       
+            <div class="cell">
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1544507888-56d73eb6046e?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="img2"
+                        class="card-img">
+                    <div class="card-section">
+                        <h3 class="card-title text-primary">Card Title 2</h3>
+                        <p class="card-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi, magni dolore blanditiis error officiis ut iusto voluptatem quidem aperiam dicta..</p>
+                        <a href="#" class="button card-button warning">Learn More</a>
+                    </div>
+                </div>
+            </div>
+           
+            <div class="cell">
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1507591064344-4c6ce005b128?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="img3"
+                        class="card-img">
+                    <div class="card-section">
+                        <h3 class="card-title text-primary">Card Title 3</h3>
+                        <p class="card-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi, magni dolore blanditiis error officiis ut iusto voluptatem quidem aperiam dicta.</p>
+                        <a href="#" class="button card-button alert">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.6.3/js/foundation.min.js"></script>
+    <script>
+        $(document).foundation();
+    </script>
+</body>
+
+</html>

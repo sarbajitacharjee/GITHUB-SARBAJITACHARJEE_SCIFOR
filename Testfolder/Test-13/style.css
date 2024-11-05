@@ -1,0 +1,117 @@
+
+:root {
+    --primary-color: #1e90ff;
+    --secondary-color: #ffffff;
+    --bg-color: #f0f4f8;
+    --input-bg-color: #f9f9f9;
+    --text-color: #333;
+    --button-hover-color: #1c86ee;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+    --border-radius: 10px;
+    --font-family: 'Roboto', sans-serif;
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--font-family);
+    background-color: var(--bg-color);
+  }
+  
+  .weather-app {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+  }
+  
+  h1 {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+  }
+  
+  form {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+    width: 100%;
+    max-width: 400px;
+  }
+  
+  input {
+    flex: 1;
+    padding: 15px;
+    font-size: 1rem;
+    border: none;
+    border-radius: var(--border-radius) 0 0 var(--border-radius);
+    background-color: var(--input-bg-color);
+    color: var(--text-color);
+    outline: none;
+    box-shadow: 0 3px 6px var(--shadow-color);
+  }
+  
+  button {
+    padding: 15px 20px;
+    font-size: 1rem;
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    border: none;
+    border-radius: 0 var(--border-radius) var(--border-radius) 0;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 3px 6px var(--shadow-color);
+  }
+  
+  button:hover {
+    background-color: var(--button-hover-color);
+  }
+  
+  .weather-info {
+    background-color: var(--secondary-color);
+    padding: 30px;
+    border-radius: var(--border-radius);
+    text-align: center;
+    box-shadow: 0 4px 12px var(--shadow-color);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+ 
+  
+  .weather-info h2 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    color: var(--primary-color);
+  }
+  
+  .weather-info p {
+    font-size: 1.2rem;
+    color: var(--text-color);
+    margin: 5px 0;
+  }
+  
+  .error {
+    color: #ff4f4f;
+    font-size: 1.2rem;
+    margin-top: 10px;
+  }
+  
+  @media (max-width: 768px) {
+    input, button {
+      font-size: 0.9rem;
+    }
+  
+    h1 {
+      font-size: 2rem;
+    }
+  
+    .weather-info {
+      padding: 20px;
+    }
+  }
+  span{
+    font-weight: 600;
+    color: rgb(64, 18, 247);
+  }
